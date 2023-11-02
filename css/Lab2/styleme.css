@@ -23,3 +23,25 @@ h2{
     width: 100px;
     height: auto;
 }
+
+.welcomeContainer{
+    background-color:antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.welcomeContainer img{
+    height: 10em;
+    width: auto;
+}
+
+.LogoutButton{
+    border-radius: 10px;
+    height: auto;
+    width: 100px;
+    padding: 10px;
+    font-size: 20px;
+}
