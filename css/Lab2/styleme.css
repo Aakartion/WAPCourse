@@ -119,3 +119,13 @@ h2{
     font-size: 20px;
     cursor: pointer; 
 }
+
+.workshopLable{
+    background-color: aliceblue;
+}
+
+form{
+    border: 1px solid darkblue;
+    display: block;
+    margin: 10px;
+}
