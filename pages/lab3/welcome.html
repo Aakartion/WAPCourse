@@ -10,11 +10,83 @@
     <div class="welcomeContainer">
         <img class="myLogo" src="./../../assets/images/Lab3/Aakarshan Simkhada.png" alt="myLogo">
         <h1>Welcome Aakarshan</h1>
-        <button class="LogoutButton">Logout</button>
+        <button class="logoutButton">Logout</button>
     </div>
     <div class="productListContainer">
         <h2 id="productList">Product List</h2>
-       
+        <div class="shoppingTable">
+            <div class="rowTitle">
+                <div class="cell">Name</div>
+                <div class="cell">Price</div>
+                <div class="cell">Stock</div>
+                <div class="cell">Actions</div>
+            </div>
+            <div class="row">
+                <div class="cell">React.js</div>
+                <div class="cell">19.99</div>
+                <div class="cell">5</div>
+                <div class="cell"><img src="./../../assets/images/Lab3/shoppingCart.png" alt="shoppingCartIcon"></div>
+            </div>
+            <div class="row">
+                <div class="cell">Angular</div>
+                <div class="cell">89.99</div>
+                <div class="cell">30</div>
+                <div class="cell"><img src="./../../assets/images/Lab3/shoppingCart.png" alt="shoppingCartIcon"></div>
+            </div>
+            <div class="row">
+                <div class="cell">Java Script</div>
+                <div class="cell">9.99</div>
+                <div class="cell">29</div>
+                <div class="cell"><img src="./../../assets/images/Lab3/shoppingCart.png" alt="shoppingCartIcon"></div>
+            </div>
+            <div class="row">
+                <div class="cell">C++</div>
+                <div class="cell">0.99</div>
+                <div class="cell">18</div>
+                <div class="cell"><img src="./../../assets/images/Lab3/shoppingCart.png" alt="shoppingCartIcon"></div>
+            </div>
+        </div>
+
+        <h2>Your Shopping Cart</h2>
+        <div class="shoppingTable">
+            <div class="rowTitle">
+                <div class="cell">Name</div>
+                <div class="cell">Price</div>
+                <div class="cell">Quantity</div>
+                <div class="cell">Total Price</div>
+            </div>
+            <div class="row">
+                <div class="cell">React.js</div>
+                <div class="cell">19.99</div>
+                <div class="cell"><button>+</button> <div>1</div> <button>-</button></div>
+                <div class="cell">19.99</div>
+            </div>
+            <div class="row">
+                <div class="cell">Angular</div>
+                <div class="cell">89.99</div>
+                <div class="cell"><button>+</button> <div>4</div> <button>-</button></div>
+                <div class="cell">30</div>
+            </div>
+            <div class="row">
+                <div class="cell">Java Script</div>
+                <div class="cell">9.99</div>
+                <div class="cell"><button>+</button> <div>5</div> <button>-</button></div>
+                <div class="cell">29</div>
+            </div>
+            <div class="row">
+                <div class="cell">C++</div>
+                <div class="cell">0.99</div>
+                <div class="cell"><button>+</button> <div>8</div> <button>-</button></div>
+                <div class="cell">18</div>
+            </div>
+            <div class="row">
+                <div class="totalAmount">Total Amount: 844</div>
+            </div>
+        </div>
+        <div class="buttonDiv">
+            <button class="placeOrderButton">Place Order</button>
+        </div>
+        
     </div>
 </body>
 </html>

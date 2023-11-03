@@ -38,12 +38,13 @@ h2{
     width: auto;
 }
 
-.LogoutButton{
+.logoutButton{
     border-radius: 10px;
     height: auto;
     width: 100px;
     padding: 10px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .productListContainer{
@@ -52,4 +53,69 @@ h2{
 
 #productList{
     padding-left: 10px;
+}
+
+.shoppingTable{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+    width: auto;
+    margin: auto;
+    padding: 10px;
+
+}
+
+.rowTitle{
+    display: flex;
+    font-weight: bold;
+}
+
+.row{
+    display: flex;
+}
+
+.cell{
+    flex:1;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.cell img{
+    height: auto;
+    width: 20px;
+}
+
+.cell button{
+    display: inline;
+    cursor: pointer;
+}
+
+.cell div{
+    display: inline;
+}
+
+.totalAmount{
+    flex: 1;
+    padding: 5px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+
+
+ .buttonDiv{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.placeOrderButton{
+    margin: 10px;
+    display: flex;
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer; 
 }
