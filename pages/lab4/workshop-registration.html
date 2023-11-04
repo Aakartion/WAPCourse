@@ -4,22 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/Lab2/styleme.css">
+    <link rel="stylesheet" href="../../css/Lab4/style.css">
     <title>Workshop Registration</title>
 </head>
 <body>
-    <form action="">
+    <form action="process_registration" method="post">
         <h2 class="workshopLable">Workshop Registration</h2>
-        <span>Register now while seats are available!</span>
-        <label for="">First Name <span>*</span> <input name="firstName" /> <input type="submit"></label>
-        <label for="">Last Name <span>*</span> <input name="lastName" /> <input type="submit"></label>
-        <label for="">Company/Institution <span>*</span> <input name="company" /> <input type="submit"></label>
+
+        <div class="form-container">
+            <div class="left-section">
+                <label class="firsNameLabel" for="firstName"> First Name <span>*</span></label>
+                <input type="text" id="firstName" name="firstName" maxlength="20" placeholder="Enter your given name" required>
+
+                <label class="lastNameLabel" for="lastName"> Last Name <span>*</span></label>
+                <input type="text" id="lastName" name="lastName" maxlength="20" placeholder="Enter your family name" required>
+
+                <label class="companyNameLabel" for="companyName"> Company/Institution <span>*</span></label>
+                <input type="text" id="companyName" name="companyName" maxlength="50" placeholder="Enter your Company name" required>
+
+                <label class="addressLabel" for="address"> Address <span>*</span></label>
+                <input type="text" id="address" name="address" maxlength="20" placeholder="Enter your street address" required>
+                
+                <label class="cityLabel" for="city"> City <span>*</span></label>
+                <input type="text" id="city" name="city" maxlength="20" placeholder="Enter your city" required>
+
+                <label for="state">State</label>
+                <select id="state" name="state">
+                    <option value="select" selected disabled>Select state</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                </select>
+
+                <label for="country">Country</label>
+                <select id="country" name="country" >
+                    <option value="" selected disabled>Select Country</option>
+                    <option value="china">China</option>
+                    <option value="nepal">Nepal</option>
+                    <option value="usa">United States of America</option>
+                    <option value="jordan">Jordan</option>
+                </select>
+
+                <label class="emailLabel" for="email"> Email <span>*</span></label>
+                <input type="text" id="email" name="email" placeholder="Enter your email address" required>
+
+                <label class="phoneLabel" for="phone"> Phone Number <span>*</span></label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]" placeholder="Enter your phone number" required>
+
+
+            </div>
+            <div class="right-section">
+                <label for="mealPreference">Meal Preference</label>
+                <select name="mealPreference" id="mealPreference">
+                    <option value="none">Select</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="non-vegetarian">Non-Vegetarian</option>
+                </select>
+                <label for="paymentMode">Payment Mode</label>
+                <input type="checkbox" id="paymentMode" name="paymentMode">
+                <label for="chequeNo">DD/Check No.</label>
+                <input type="text" id="chequeNo" name="chequeNo">
+                <label for="bankName">Bank Name</label>
+                <input type="text" id="bankName" name="bankName">
+                <label for="payableAt">Payable at</label>
+                <input type="text" id="payableAt" name="payableAt">
+            </div>
+        </div>
+        <div class="footer">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
     </form>
-
-
-
-
-
-
 
     <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Faakartion.github.io%2FWAPCourse%2Fpages%2Flab2%2Fabout-me.html"><img class="checker" src="./../../assets/images/Lab2/css_checker.png" alt="css checker"></a>
     <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Faakartion.github.io%2FWAPCourse%2Fpages%2Flab2%2Fabout-me.html"><img class="checker" src="./../../assets/images/htmlchecker.png" alt="css checker"></a>

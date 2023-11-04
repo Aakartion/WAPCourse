@@ -1,0 +1,62 @@
+.form-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.left-section {
+    flex: 1;
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+
+.right-section {
+    flex: 1;
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+
+.left-section label,
+.right-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.left-section input,
+.left-section select,
+.right-section input {
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.right-section label {
+    margin-top: 10px;
+}
+
+.firsNameLabel span{
+    color: red;
+    font-size: 10px;
+}
+
+#firstName{
+    size: 100px;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+}
+
+.footer button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
