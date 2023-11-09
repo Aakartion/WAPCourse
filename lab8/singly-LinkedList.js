@@ -1,16 +1,14 @@
-class Node {
-  constructor(data, next = null) {
+function Node(data, next = null){
     this.data = data;
     this.next = next;
-  }
 }
 
-class LinkedList {
-  constructor() {
-    this.head = null;
-  }
 
-  add(data) {
+function LinkedList(){
+    this.head = null;
+}
+
+LinkedList.prototype.add = function(data){
     const newNode = new Node(data);
     if (this.head == null) {
       this.head = newNode;
@@ -21,32 +19,33 @@ class LinkedList {
       }
       current.next = newNode;
     }
-  }
-  remove(data) {
+}
+
+LinkedList.prototype.remove = function(data){
     if (this.head == null) {
-      console.log("List is empty");
-      return;
-    }
-    if (this.head.data == data) {
-      this.head = this.head.next;
-      return;
-    }
+        console.log("List is empty");
+        return;
+      }
+      if (this.head.data == data) {
+        this.head = this.head.next;
+        return;
+      }
+  
+      let current = this.head;
+      let prev = null;
+  
+      while (current && current.data != data) {
+        prev = current;
+        current = current.next;
+      }
+      if (!current) {
+        console.log("Provided node is not available");
+        return;
+      }
+      prev.next = current.next;
+}
 
-    let current = this.head;
-    let prev = null;
-
-    while (current && current.data != data) {
-      prev = current;
-      current = current.next;
-    }
-    if (!current) {
-      console.log("Provided node is not available");
-      return;
-    }
-    prev.next = current.next;
-  }
-
-  print() {
+LinkedList.prototype.print = function(){
     let current = this.head;
     const elements = [];
 
@@ -56,9 +55,7 @@ class LinkedList {
     }
 
     console.log(`LinkedList{${elements.join(",")}}`);
-  }
 }
-
 
 let linkedList = new LinkedList();
 linkedList.add(45);
