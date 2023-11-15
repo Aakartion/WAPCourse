@@ -1,0 +1,123 @@
+question 1: How many callbacks queues in Node.js and what are they? 
+    Give examples to explain how different callbacks are enqueued in different queues
+Ans: There are 6 queues in Node.js and they are:
+        1. nextTick and Promise Queue
+            nextTick and Promise callbacks queues are processed between each timer and immediate callbacks in node. 
+            The callbacks that contains nextTick() and promise() will be pushed into this queue.
+
+        2. Timer Queue
+            Timer queue executes the callbacks scheduled by setTimeout() and setTimeInterval().
+
+        3. I/O Queue:
+
+        4. Polling Queue:
+            retrieve new I/O events; execute I/O related callbacks (almost all with the exception 
+            of close callbacks, the ones scheduled by timers, and setImmediate());
+            node will block here when appropriate.
+
+        5. Check Queue:
+            In this queue, setImmediate() callbacks are invoked.
+
+        6. Close Queue:
+            callbacks: some close callbacks, e.g.socket.on('close', ...)
+
+question 2: What's the output in the code below? Try to understand how it works as we explained in the class
+
+                console.log('start');
+
+                setTimeout(() => console.log('timeout 1'), 0);
+
+                setTimeout(() => {
+
+                    console.log('timeout 2')
+
+                    process.nextTick(() => console.log('nextTick 3'));
+
+                }, 0);
+
+                setTimeout(() => console.log('timeout 3'), 0);
+
+                new Promise((resolve, reject) => resolve('Hello')).then(() => console.log('Promise...1'));
+
+                new Promise((resolve, reject) => resolve('Hello')).then(() => console.log('Promise...2'));
+
+                process.nextTick(() =>  console.log('nextTick 1'));
+
+                process.nextTick(() =>  console.log('nextTick 2'));
+
+                console.log('end');
+
+            Ans: output:
+                start
+                end
+                nextTick 1
+                nextTick 2
+                Promise...1
+                Promise...2
+                timeout 1
+                timeout 2
+                nextTick 3
+                timeout 3
+
+
+
+
+question 3: What's the output of the code below? Try to understand how it works as we explained in the class.
+
+            const fs = require('fs');
+
+
+            fs.readFile('hello.txt', () => {
+
+                console.log('readFile....');
+
+            });
+
+            setTimeout(() => console.log('timeout'), 0);
+
+            setImmediate(() => console.log('Immediate'));
+
+
+            And: output:
+                    timeout
+                    readFile....
+                    Immediate
+
+
+
+
+question 4: What's the output of the code below when running in Node.js? 
+            If for the same code running in browser, what's the output? Why is the output different?
+
+            var message = 'Hello World';
+
+            function logMessage() {
+
+                console.log(this.message);
+
+            }
+
+            logMessage();
+
+        Ans: when we run the code in Node.js the output is "undefined" and the output running in the browser is "Hello World".
+
+
+question 5: What will happen when execute the code below? If there's error, what's the error and what cause the error? 
+            If no error, what's the output in the console? Assume pattern1.js and app.js are in the same folder
+
+            // pattern1.js
+
+            module.exports.getName = function () {
+
+                console.log('Josh Edward');
+
+            };
+
+
+            // app.js
+
+            const getName = require('./pattern1');
+
+            getName();
+
+        Ans: 
