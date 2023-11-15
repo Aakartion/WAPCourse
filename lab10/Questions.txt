@@ -99,7 +99,17 @@ question 4: What's the output of the code below when running in Node.js?
 
             logMessage();
 
-        Ans: when we run the code in Node.js the output is "undefined" and the output running in the browser is "Hello World".
+        Ans: when we run the code in Node.js the output is "undefined" and the output running in the browser is "Hello World". The reason 
+            for the different in the output is because of "this" keyword in different context.
+
+            when we run the above code in Node.js, this "this" keyword inside the logMessage() refers to the global object. Since there is no
+            `message` property in the global object, `this.message` evaluates to `undefined`.
+
+            when we execute this code in browser, then 'this' keyword refers typically to the global object which is window in this case.
+            And when the code runs in the browser, `this.message` would be equvalent to the `window.message`. 
+
+            Generally speaking, In Node.js 'this' is the global object of the Node.js runtime, while in browser, 'this' is usually the 
+            'window' object.
 
 
 question 5: What will happen when execute the code below? If there's error, what's the error and what cause the error? 
