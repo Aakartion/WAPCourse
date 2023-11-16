@@ -213,3 +213,31 @@ question 7: What will happen when execute the code below? If there's error, what
 
         Ans: There is no error on this code and the output is:
              "Josh Edward". 
+
+question 8:Review IIFE, bind, apply, call methods first, what's the value of result in the console?
+
+            const result = (function(exports, module){
+
+                exports = module.exports;
+
+                exports.firstname = 'John';
+
+                module.exports.lastname = 'Smith';
+
+                exports = {
+
+                    getFullName: function(){
+
+                        console.log('John Smith')
+
+                    }
+
+                }
+
+                return module.exports;
+
+            }).apply(null, [null, {exports: {}}]);
+
+            console.log(result);
+
+        Ans: The output is {firstname: 'John', lastname: 'Smith'};
