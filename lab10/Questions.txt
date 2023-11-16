@@ -128,6 +128,88 @@ question 5: What will happen when execute the code below? If there's error, what
 
             const getName = require('./pattern1');
 
+
             getName();
 
-        Ans: 
+        Ans:    When we execute above code, we get an error in line "getName()". This is beacuse, getName inside the app.js is not a function. It
+                is a object that contain getName() function inside it. That's why when we execute the above code we get error saying "getName is not a 
+                function". For the correct output we can execute the code by replacing the last line with "getName.getName()" because, getName() is the 
+                property of getName object.
+
+
+
+question 6: What will happen when execute the code below? If there's error, what's the error and what cause the error? 
+            If no error, what's the output in the console? Assume pattern1.js and app.js are in the same folder
+
+            // pattern1.js
+
+            exports.getFirstname = function () {
+
+                console.log('Josh');
+
+            };
+
+            exports = {
+
+                getLastname: function(){
+
+                    console.log('Edward');
+
+                }
+
+            }
+
+            module.exports = function (){
+
+                console.log('Josh Edward');
+
+            }
+
+
+            // app.js
+
+            const getName = require('./pattern2');
+
+            getName();
+
+
+        Ans: There will be no error. And the output is "Josh Edward" because module.exports is changed to a function that is printing "Josh Edward".
+
+
+
+question 7: What will happen when execute the code below? If there's error, what's the error and what cause the error? 
+            If no error, what's the output in the console? Assume pattern1.js and app.js are in the same folder
+
+            // pattern1.js
+
+            exports.getFirstname = function () {
+
+                console.log('Josh');
+
+            };
+
+            exports = {
+
+                getLastname: function(){
+
+                    console.log('Edward');
+
+                }
+
+            }
+
+            module.exports.getFullname = function (){
+
+                console.log('Josh Edward');
+
+            }
+
+
+            // app.js
+
+            const {getFullname} = require('./pattern2');
+
+            getFullname();
+
+        Ans: There is no error on this code and the output is:
+             "Josh Edward". 
