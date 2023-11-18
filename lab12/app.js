@@ -27,6 +27,18 @@ app.use("/products", productRouter);
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
 
+// Custom 404 page
+app.use((req, res) => res.status(404).sendFile(__dirname + '/views/404.html'));
+
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+  });
+  
+
+
 app.listen(port, () => {
   console.log(`Server is running . . . .`);
 });
